@@ -10,8 +10,11 @@ namespace APBD_05._03
         public static async Task Main(string[] args)
         {
 
+
+            string url = args.Length > 0 ? args[0] : "https://www.pja.edu.pl";
+
             HttpClient client = new HttpClient();
-            var result = await client.GetAsync("http://www.wp.pl"); //Task<HttpResponseMassage>
+            var result = await client.GetAsync(url); //Task<HttpResponseMassage>
 
             if (!result.IsSuccessStatusCode) return;
 
